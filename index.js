@@ -25,5 +25,11 @@ function calculate( num1, operator, num2){
     return num1 + num2;
   } else if (operator === 'subtract'){
     return num1 - num2;
+  } else if (operator === 'square root'){
+    if (num1 === 0){
+      return 'err'
+    }
+    return Math.pow(num2, 1/num1);
   }
+
 }
