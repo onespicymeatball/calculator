@@ -2,6 +2,10 @@ h1, h2 {
   font-family: Lato;
 }
 
+#calculator {
+  
+}
+
 .calculator {
   border: 1px solid black;
   display: flex;
