@@ -1,3 +1,26 @@
 h1, h2 {
   font-family: Lato;
 }
+
+.calculator {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.calcualtor__display {
+  height: 1rem;
+  border: 1px solid green;
+  width: 50%;
+  text-align: center;
+  font-weight: bold;
+  margin: 0.5rem;
+  align-self: center;
+}
+.calculator__body {
+  display: flex;
+  flex-direction: column;
+}
+.calculator__input-container {
+  display: flex;
+}
