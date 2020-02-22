@@ -2,17 +2,28 @@
 import './style.css';
 
 // Write Javascript code!
-const add_button = document.getElementById('add');
-const subt_button = document.getElementById('subtract');
-const mult_button = document.getElementById('multiply');
-const divi_button = document.getElementById('divide');
-const num1_hopper = document.getElementById('num1');
-const num2_hopper = document.getElementById('num2');
-const output_hopper = document.getElementById('output')
+const buttons = Array.from(document.querySelectorAll('button'));
+const num1_input = document.getElementById('num1');
+const num2_input = document.getElementById('num2');
+const output_input = document.getElementById('output')
 
-add_button.addEventListener('click', (event) => {
-  const num1 = +num1_hopper.value;
-  const num2 = +num2_hopper.value;
-  const output = num1 + num2;
-  output_hopper.innerText = output;
+buttons.forEach((button) => {
+  button.addEventListener('click', (event) => {
+    const num1 = +num1_input.value;
+    const num2 = +num2_input.value;
+    const output = calculate(num1, event.target.getAttribute('aria-label'), num2)
+    output_input.innerText = output;
+  });
 });
+
+function calculate( num1, operator, num2){
+  if (operator === 'divide') {
+    return num1 / num2;
+  } else if (operator === 'multiply') {
+    return num1 * num2;
+  } else if (operator === 'add') {
+    return num1 + num2;
+  } else if (operator === 'subtract'){
+    return num1 - num2;
+  }
+}
